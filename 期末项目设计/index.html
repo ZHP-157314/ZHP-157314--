@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>团队项目开发日志 | 智能多肉花盆</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            padding: 2rem 5%;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+        }
+        .section-title {
+            color: #2980b9;
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f8ff;
+            color: #2c3e50;
+        }
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .code-block pre {
+            color: #e74c3c;
+        }
+        .placeholder {
+            color: #7f8c8d;
+            font-style: italic;
+            background-color: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #ecf0f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #95a5a6;
+            margin: 1rem 0;
+            border: 2px dashed #bdc3c7;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>团队项目开发日志<br>智能多肉花盆</h1>
+
+        <!-- 一、Project Profile 项目档案 -->
+        <section>
+            <h2 class="section-title">一、Project Profile 项目档案</h2>
+            <table>
+                <tr>
+                    <th>项目名称</th>
+                    <td>智能多肉花盆</td>
+                </tr>
+                <tr>
+                    <th>团队成员</th>
+                    <td>
+                        <ul>
+                            <li><span class="placeholder">成员1：范博洋 </span></li>
+                            <li><span class="placeholder">成员2：吕璇</span></li>
+                            <li><span class="placeholder">成员3：张洪平（本人）</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>个人核心贡献</th>
+                    <td>参与项目方案讨论与痛点分析；协助完成硬件器件选型；负责花盆结构的3D建模与打印制作；搭建个人HTML开发日志</td>
+                </tr>
+                <tr>
+                    <th>其他成员分工</th>
+                    <td>
+                        <ul>
+                            <li>范博洋：负责嵌入式代码开发，完成传感器数据读取、风扇控制逻辑与OLED显示驱动编写</li>
+                            <li>吕璇：负责硬件电路搭建与接线，协助完成各传感器的调试与功能联调</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>一句话产品定义</th>
+                    <td><span class="placeholder">为多肉植物养护场景下的土壤湿度不均、花盆漏水难发现问题，提供多维度环境监测+自动通风提醒的智能花盆解决方案</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 二、Design Log 开发时间轴 -->
+        <section>
+            <h2 class="section-title">二、Design Log 开发时间轴</h2>
+
+            <!-- 阶段1：周六上午 -->
+            <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">阶段1：周六上午（09:50-11:30）期末项目设计</h3>
+            <table>
+                <tr>
+                    <th>阶段核心任务</th>
+                    <td>团队头脑风暴，明确项目痛点，完成需求分析与硬件选型，提交Hackathon项目设计卡</td>
+                </tr>
+                <tr>
+                    <th>开发进展与迭代</th>
+                    <td>
+                        <ul>
+                            <li>参与中期项目展示交流，吸收同类项目的设计经验与避坑要点</li>
+                            <li>和团队讨论确定多肉花盆的核心需求：双层湿度监测、漏水检测、过湿通风、状态提醒</li>
+                            <li>协助完成硬件器件选型，确定ESP32主控、双湿度传感器、雨滴传感器等器件清单</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>相关素材</th>
+                    <td></td>
+                </tr>
+            </table>
+
+            <!-- 阶段2：周六下午 -->
+            <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">阶段2：周六下午（13:00-18:00）软硬件并行开发</h3>
+            <table>
+                <tr>
+                    <th>阶段核心任务</th>
+                    <td>硬件组：组装结构、调试传感器；软件组：编写嵌入式代码，搭建HTML Log基础框架</td>
+                </tr>
+                <tr>
+                    <th>开发进展与迭代</th>
+                    <td>
+                        <ul>
+                            <li>协助完成花盆结构的3D模型调整与打印准备，确认结构件的安装尺寸</li>
+                            <li>参与硬件接线测试，协助完成土壤湿度传感器、雨滴传感器的初步接线与数据读取测试</li>
+                            <li>搭建个人HTML Log的基础框架，完成前期信息整理与页面搭建</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>相关素材</th>
+                    <td>
+
+                    <img src="花盆上下.jpg" alt="花盆上下结构图" style="width: 100%; border-radius: 8px; margin: 10px 0;">
+
+                    <img src="打印中的半成品.jpg" alt="3D打印半成品图" style="width: 100%; border-radius: 8px; margin: 10px 0;">
+                    </td>
+                </tr>
+            </table>
+
+            <!-- 阶段3：周日早晨 -->
+            <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">阶段3：周日早晨项目收尾与功能完善</h3>
+            <table>
+                <tr>
+                    <th>阶段核心任务</th>
+                    <td>软硬件联调收尾，完善核心功能；补充HTML Log内容，整理项目素材；准备最终演示</td>
+                </tr>
+                <tr>
+                    <th>开发进展与迭代</th>
+                    <td>
+                        <ul>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>相关素材</th>
+                    <td>
+                        <img src="自定义结构体.jpg" alt="自定义结构体" style="width: 100%; border-radius: 8px; margin: 10px 0;">
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- 三、Tech Stack & Code 技术栈与代码 -->
+        <section>
+            <h2 class="section-title">三、Tech Stack & Code 技术栈与代码</h2>
+
+            <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">1. 完整硬件清单</h3>
+            <ul>
+                <li><strong>主控模块</strong>: ESP32-C3 开发板 × 1，USB 数据线 × 1</li>
+                <li><strong>传感器模块</strong>: 电容式土壤湿度传感器 × 2（用于表层土壤监测与深层土壤监测）</li>
+                <li><strong>执行模块</strong>: 5mm 高亮 LED 灯 × 1（单灯显示双传感器状态），220Ω 限流电阻 × 1</li>
+                <li><strong>接线与电源</strong>: 杜邦线若干，面包板 × 1，5V USB 供电</li>
+                <li><strong>结构（可选）</strong>: 3D 打印花盆外壳，传感器固定支架</li>
+            </ul>
+
+            <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">2. 自定义结构件说明</h3>
+            <p>花盆主体结构为3D打印件，采用双层分体式设计：上层为多肉种植盆，下层为漏水收集与传感器安装仓；结构件预留了传感器探头安装孔、风扇通风口、显示屏与按键安装位，实现所有器件的一体化集成。</p>
+
+                        <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">2. 核心功能说明</h3>
+                        <p>双土壤湿度采集：表层 + 深层；单 LED 亮度分级显示：全灭 = 两层都湿润；低亮 = 表层干燥；中亮 = 深层干燥；高亮 = 两层都干燥。支持 WiFi 连接 + Web 远程控制，自动 / 手动模式切换。</p>
+
+                        <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">3. 核心嵌入式代码</h3>
+                        <div class="code-block">
+                                <pre>#include &lt;WiFi.h&gt;
+
+// ==================== 引脚定义 ====================
+#define LED_PIN         2       // 状态LED
+#define SOIL_SURFACE    0       // 表层传感器
+#define SOIL_DEEP       1       // 深层传感器
+
+// ==================== WiFi信息 ====================
+const char* ssid     = "小母牛倒立";
+const char* password = "niubichongtian";
+
+// ==================== 湿度阈值 ====================
+#define SURFACE_DRY  3200
+#define SURFACE_WET  1800
+#define DEEP_DRY     3000
+#define DEEP_WET     1600
+
+// ==================== LED亮度等级 ====================
+#define L_OFF     0
+#define L_SURFACE 85
+#define L_DEEP    170
+#define L_BOTH    255
+
+WiFiServer server(80);
+int currentBright = 0;
+bool autoMode = true;
+
+// ==================== 函数声明 ====================
+int readSensor(int pin);
+void setLED(int bright);
+
+// ==================== 初始化 ====================
+void setup() {
+    Serial.begin(115200);
+    ledcAttach(LED_PIN, 5000, 8);
+    setLED(0);
+
+    // WiFi连接
+    WiFi.begin(ssid, password);
+    while (WiFi.status() != WL_CONNECTED) delay(500);
+  
+    server.begin();
+}
+
+// ==================== 主循环 ====================
+void loop() {
+    // 自动模式：根据双传感器控制LED
+    if (autoMode) {
+        int sVal = readSensor(SOIL_SURFACE);
+        int dVal = readSensor(SOIL_DEEP);
+    
+        bool sDry = sVal &gt; SURFACE_DRY;
+        bool dDry = dVal &gt; DEEP_DRY;
+
+        if      (sDry &amp;&amp; dDry) setLED(L_BOTH);
+        else if (dDry)         setLED(L_DEEP);
+        else if (sDry)         setLED(L_SURFACE);
+        else                  setLED(L_OFF);
+    }
+
+    // Web服务器处理
+    WiFiClient client = server.accept();
+    if (!client) return;
+
+    String req = client.readStringUntil('\r');
+
+    // 模式切换
+    if (req.indexOf("GET /auto") &gt;= 0) autoMode = true;
+    if (req.indexOf("GET /manual") &gt;=0) autoMode = false;
+  
+    // 手动开关LED
+    if (req.indexOf("GET /toggle") &gt;= 0) {
+        autoMode = false;
+        currentBright = (currentBright == 0) ? 255 : 0;
+        setLED(currentBright);
+    }
+
+    // 读取数据
+    int sVal = readSensor(SOIL_SURFACE);
+    int dVal = readSensor(SOIL_DEEP);
+
+    // 简易网页
+    client.print("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n");
+    client.print("&lt;h2&gt;智能花盆&lt;/h2&gt;");
+    client.print("表层湿度: " + String(sVal) + "&lt;br&gt;");
+    client.print("深层湿度: " + String(dVal) + "&lt;br&gt;");
+    client.print("&lt;a href='/auto'&gt;自动模式&lt;/a&gt;&lt;br&gt;");
+    client.print("&lt;a href='/manual'&gt;手动模式&lt;/a&gt;&lt;br&gt;");
+    client.print("&lt;a href='/toggle'&gt;LED开关&lt;/a&gt;");
+  
+    client.stop();
+}
+
+// 平滑读取传感器
+int readSensor(int pin) {
+    int sum = 0;
+    for (int i=0; i&lt;5; i++) { sum += analogRead(pin); delay(10); }
+    return sum / 5;
+}
+
+// 设置LED亮度
+void setLED(int bright) {
+    currentBright = bright;
+    ledcWrite(LED_PIN, bright);
+}
+</pre>
+                        </div>
+
+            <h3 style="color: #34495e; margin: 1rem 0 0.5rem;">4. 开发工具/软件清单</h3>
+            <ul>
+                <li>硬件开发：Arduino IDE（ESP32开发环境）、串口调试助手</li>
+                <li>结构设计：Fusion 360（3D建模）、Bambu Studio（3D打印切片）</li>
+                <li>日志开发：VS Code（HTML/CSS编写）</li>
+            </ul>
+        </section>
+
+        <!-- 四、Reflections 开发反思 -->
+        <section>
+            <h2 class="section-title">四、Reflections 开发反思</h2>
+            <table>
+                <tr>
+                    <th>遇到的硬核Bug/难题</th>
+                    <td>
+                        <ul>
+                            <li><span class="placeholder">3D打印结构件尺寸偏大，毛刺（由于使用树状自动支撑）等问题</span></li>
+                            <img src="毛刺.jpg" alt="毛刺" style="width:100%;border-radius:8px;margin:10px 0;">
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>问题的解决/妥协过程</th>
+                    <td>
+                        <ul>
+                            <li><span class="placeholder">通过多次修改3D模型参数，解决了尺寸偏大问题；重新使用普通自动支撑打印，并用剪刀修剪，解决了毛刺问题</span></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>个人反思与收获</th>
+                    <td>
+                        <ul>
+                            <li><span class="placeholder">软硬件联调的理解深入、结构设计与硬件兼容性的重要性、团队协作的收获、遇到问题的排错思路提升等</span></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
